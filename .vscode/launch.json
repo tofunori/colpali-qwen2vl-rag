@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Index Documents",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/cli.py",
+            "args": ["index", "--folder", "${input:folderPath}"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Ask Question",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/cli.py",
+            "args": ["ask", "${input:question}"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Create Sample PDF",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/create_sample.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ],
+    "inputs": [
+        {
+            "id": "folderPath",
+            "type": "promptString",
+            "description": "Path to folder containing PDFs",
+            "default": "./sample_pdfs"
+        },
+        {
+            "id": "question",
+            "type": "promptString",
+            "description": "Question to ask about the documents",
+            "default": "What does Figure 1 show?"
+        }
+    ]
+}
